@@ -4,7 +4,7 @@ public class Win {
     public static boolean check(int[][] board) {
         boolean rsl = false;
         for (int index = 0; index < board.length; index++) {
-            if (board[index][index] == 1 && monoHorizontal(board, index) || monoVertical(board, index)) {
+            if (board[index][index] == 1 && monoHor(board, index) || monoVert(board, index)) {
                 rsl = true;
                 break;
             }
@@ -12,7 +12,7 @@ public class Win {
         return rsl;
     }
 
-    public static boolean monoHorizontal(int[][] boart, int row) {
+    public static boolean monoHor(int[][] boart, int row) {
         boolean result = true;
         for (int i = 0; i < boart[row].length; i++) {
             if (boart[row][i] != 1) {
@@ -23,7 +23,7 @@ public class Win {
         return result;
     }
 
-    public static boolean monoVertical(int[][] boart, int cell) {
+    public static boolean monoVert(int[][] boart, int cell) {
         boolean result = true;
         for (int i = 0; i < boart.length; i++) {
             if (boart[i][cell] != 1) {
